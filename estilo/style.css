@@ -465,24 +465,243 @@ span{
     margin: auto;
 }
 
-.projects{
-    background-color: var(--segundo-bgc);
+.testimonials{
+    background: var(--segundo-bgc);
 }
 
-.projects-box{
+.testimonials-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.testimonials-box .heading{
+    margin-bottom: 5rem;
+}
+
+.testimonials-box img{
+    width: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-cor);
+    box-shadow: 0 0 25px var(--main-cor);
+}
+
+.wrapper{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax (30px, 1fr));
-    place-items: center;
+    grid-template-columns: repeat(3,1fr);
     gap: 3rem;
-    row-gap: 5rem;
 }
 
-.projects-card{
+.testimonial-item{
+    min-height: 550px;
+    max-width: 450px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 20px 60px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.testimonial-item:hover{
+    border: 3px solid var(--main-cor);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 50px var(--main-cor);
+}
+
+.testimonial-item h2{
+    font-size: 2.8rem;
+}
+
+.testimonial-item p{
+    font-size: 1.3rem;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
     background-color: var(--bg-color);
-    border-radius: 100rem;
+}
+
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-cor);
+}
+
+.footer .social a{
+    font-size: 25px;
+    color: var(--main-cor);
+    border: 2px solid var(--main-cor);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover{
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-cor);
+    color: black;
+    box-shadow: 0 0 25px var(--main-cor);
+}
+
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3 ease-in-out;
+}
+
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-cor);
+}
+
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+@media(max-width:1285px){
+    html{
+        font-size: 55%;
+    }
+
+    .services-container{
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2,1fr);
+        margin: 0 5rem;
+    }
+}
+
+@media (max-width:991px){
+    header{
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3% 2rem;
+    }
+
+    .timeline-item::before{
+        left: 7px;
+    }
+
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even){
+        padding-left: 37px;
+    }
+
+    .timeline-dot{
+        left: 0;
+    }    
+
+    .services{
+        padding-bottom: 7rem;
+    }
+
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width:894px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-cor);
+        border-bottom: 2px solid var(--main-cor);
+        display: none;
+    }
+
+    .navbar .active{
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .home-img img{
+        width: 56vw;
+    }
+
+    .services h2{
+        margin-bottom: 3rem;
+    }
+
+    .services-container{
+        grid-template-columns: repeat(1,1fr);
+    }
 }
